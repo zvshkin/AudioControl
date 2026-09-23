@@ -38,6 +38,13 @@ jobs:
             exit 1
           }
 
+      - name: Фронтенд
+        working-directory: frontend
+        run: |
+          npm ci
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          npm run build
+
       - name: go build
         run: go build ./...
 
@@ -47,10 +54,3 @@ jobs:
 
       - name: go test
         run: go test ./...
-
-      - name: Фронтенд
-        working-directory: frontend
-        run: |
-          npm ci
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          npm run build
