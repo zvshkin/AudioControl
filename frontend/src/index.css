@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg-main text-gray-200 font-sans select-none overflow-hidden h-screen;
+    background-image: 
+      radial-gradient(circle at 10% 10%, rgba(112, 0, 255, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 90% 90%, rgba(0, 240, 255, 0.04) 0%, transparent 40%);
+  }
+}
+
+
+.window-drag {
+  --wails-draggable: drag;
+}
+
+.window-no-drag {
+  --wails-draggable: no-drag;
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(11, 13, 16, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.4);
+}
+
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid rgba(0, 240, 255, 0.6);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.vol-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.vol-slider:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.vol-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00f0ff;
+  border: none;
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  transition: transform 150ms ease;
+}
+
+.vol-slider:hover::-webkit-slider-thumb {
+  transform: scale(1.15);
+}
+
+.vol-slider:active::-webkit-slider-thumb {
+  transform: scale(0.95);
+}
+
+.vol-slider:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
