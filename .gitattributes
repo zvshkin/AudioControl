@@ -1,0 +1,20 @@
+# Normalize line endings for text files on every OS and CI runner
+* text=auto
+
+# Force LF checkout: guarantees consistent gofmt-verified content
+# on Windows runners (core.autocrlf=true) and on any developer machine.
+*.go        text eol=lf
+*.ts        text eol=lf
+*.tsx       text eol=lf
+*.js        text eol=lf
+*.css       text eol=lf
+*.json      text eol=lf
+*.html      text eol=lf
+*.md        text eol=lf
+*.yml       text eol=lf
+*.xml       text eol=lf
+*.mod       text eol=lf
+*.sum       text eol=lf
+*.md5       text eol=lf
+.gitignore  text eol=lf
+.gitattributes text eol=lf
